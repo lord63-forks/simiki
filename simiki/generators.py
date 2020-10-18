@@ -200,8 +200,10 @@ class PageGenerator(BaseGenerator):
                 meta_str = match_obj.group('meta')
                 content_str = match_obj.group('body')
             else:
-                raise Exception('extracting page with format error, '
-                                'see <http://simiki.org/docs/metadata.html>')
+                raise Exception(
+                    'extracting page {0} with format error, see '
+                    '<http://simiki.org/docs/metadata.html>'.format(filename)
+                )
 
         return meta_str, content_str
 
